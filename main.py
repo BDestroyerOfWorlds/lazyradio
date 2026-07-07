@@ -1,4 +1,5 @@
-import funcs
+import wifi
+import bt
 import time
 while True:
     print("""
@@ -16,22 +17,22 @@ while True:
     choice = input(">")
 
     if choice == "bluetooth -r":
-        funcs.bt_restart()
+        bt.bt_restart()
 
     elif choice == "bluetooth -on":
-        funcs.bt_on()
+        bt.bt_on()
 
     elif choice == "bluetooth -off":
-        funcs.bt_off()
+        bt.bt_off()
 
     elif choice == "wifi -r":
-        funcs.wifi_restart()
+        wifi.wifi_restart()
 
     elif choice == "wifi -on":
-        funcs.wifi_on()
+        wifi.wifi_on()
 
     elif choice == "wifi -off":
-        funcs.wifi_off()
+        wifi.wifi_off()
 
     elif choice == "exit":
         break
@@ -39,20 +40,3 @@ while True:
     else:
         print("Invalid command")
         time.sleep(1)
-
-
-
-
-
-"""
-CONSIDER ARGPARSE, TYPER, CLICK, DYKES
-Typer and dykes require type annotations to work. Argparse and click do not.
-Look at the docs. Click is very well known and supported, very mature.
-Argparse is part of the standard library.
-
-I don't want to be that guy because Ik you're doing it to learn, but...
-```bash
-
-alias btoff="systemctl bluetooth stop"```
-add audio stuff to unfuck audio
-"""

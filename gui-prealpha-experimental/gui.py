@@ -1,31 +1,73 @@
 import sys
 import bt
+import wifi
+
+
 from PySide6 import QtCore, QtWidgets, QtGui
 #WORK IN PROGRESS#
 class Widgets(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-        self.layout = QtWidgets.QVBoxLayout(self)
+        self.main_layout = QtWidgets.QHBoxLayout(self)
+        bt_layout = QtWidgets.QVBoxLayout()
+        wifi_layout = QtWidgets.QVBoxLayout()
+
+        self.main_layout.addLayout(bt_layout)
+        self.main_layout.addLayout(wifi_layout)
+
 
         self.btrbtn = QtWidgets.QPushButton("Restart Bluetooth")
         self.btrbtn.clicked.connect(bt.bt_restart)
-        self.layout.addWidget(self.btrbtn)
+        bt_layout.addWidget(self.btrbtn)
 
         self.btonbtn = QtWidgets.QPushButton("Turn Bluetooth On")
         self.btonbtn.clicked.connect(bt.bt_on)
-        self.layout.addWidget(self.btonbtn)
+        bt_layout.addWidget(self.btonbtn)
 
         self.btofbtn = QtWidgets.QPushButton("Turn Bluetooth Off")
         self.btofbtn.clicked.connect(bt.bt_off)
-        self.layout.addWidget(self.btofbtn)
+        bt_layout.addWidget(self.btofbtn)
 
 #WORK IN PROGRESS#
+
+        self.wifirbtn = QtWidgets.QPushButton("Restart Wifi")
+        self.wifirbtn.clicked.connect(wifi.wifi_restart)
+        wifi_layout.addWidget(self.wifirbtn)
+
+        self.wifionbtn = QtWidgets.QPushButton("Turn Wi-Fi On")
+        self.wifionbtn.clicked.connect(wifi.wifi_on)
+        wifi_layout.addWidget(self.wifionbtn)
+
+        self.wifioffbtn = QtWidgets.QPushButton("Turn Wi-Fi Off")
+        self.wifioffbtn.clicked.connect(wifi.wifi_off)
+        wifi_layout.addWidget(self.wifioffbtn)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app = QtWidgets.QApplication([])
 
 widget = Widgets()
 widget.show()
 
-sys.exit(app.exec_())
+sys.exit(app.exec())
 
 #WORK IN PROGRESS#

@@ -3,7 +3,7 @@ import bt
 import wifi
 
 
-from PySide6 import QtCore, QtWidgets, QtGui
+from PySide6 import QtWidgets
 #WORK IN PROGRESS#
 class Widgets(QtWidgets.QWidget):
     def __init__(self):
@@ -62,12 +62,14 @@ class Widgets(QtWidgets.QWidget):
 
 
 
+def run_gui():
+    app = QtWidgets.QApplication([])
 
-app = QtWidgets.QApplication([])
+    widget = Widgets()
+    widget.show()
 
-widget = Widgets()
-widget.show()
+    sys.exit(app.exec())
 
-sys.exit(app.exec())
+
 
 #WORK IN PROGRESS#

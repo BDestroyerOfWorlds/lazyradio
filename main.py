@@ -7,7 +7,7 @@ from gui import gui
 if len(sys.argv) > 1 and sys.argv[1] == '--legacy':
     while True:
         print("""
-        lazyctl - quick and easy wifi/bluetooth control
+        lazyradio - quick and easy wifi/bluetooth control
 
         Commands:
             bluetooth -r    Restart bluetooth

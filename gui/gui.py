@@ -2,12 +2,16 @@ import sys
 import bt
 import wifi
 
-
 from PySide6 import QtWidgets
-#WORK IN PROGRESS#
+from PySide6.QtGui import QIcon
+
 class Widgets(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
+
+        self.setWindowTitle("lazyradio")
+        self.setWindowIcon(QIcon("gui/icon.png"))
+
         self.main_layout = QtWidgets.QHBoxLayout(self)
         bt_layout = QtWidgets.QVBoxLayout()
         wifi_layout = QtWidgets.QVBoxLayout()
@@ -28,7 +32,8 @@ class Widgets(QtWidgets.QWidget):
         self.btofbtn.clicked.connect(bt.bt_off)
         bt_layout.addWidget(self.btofbtn)
 
-#WORK IN PROGRESS#
+
+
 
         self.wifirbtn = QtWidgets.QPushButton("Restart Wifi")
         self.wifirbtn.clicked.connect(wifi.wifi_restart)
@@ -45,23 +50,6 @@ class Widgets(QtWidgets.QWidget):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def run_gui():
     app = QtWidgets.QApplication([])
 
@@ -72,4 +60,3 @@ def run_gui():
 
 
 
-#WORK IN PROGRESS#
